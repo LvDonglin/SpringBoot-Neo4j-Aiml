@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+    <category><pattern>你好</pattern>
+        <template>
+        <random>
+            <li>你好! 我是机器人Alice</li>
+            <li>你好呀! 很高心认识你! </li>
+        </random>
+        </template>
+    </category>#1
+
+   <category>
+      <pattern>爱丽丝</pattern>
+      <template>
+         我在呢，我有什么能帮到你吗
+      </template>  
+   </category>
+
+   <category>
+      <pattern>*自我介绍*</pattern>
+      <template>
+         好的，我是机器人Alice，我会一些简单的对话，我能帮你查关于脑卒中的相关知识
+      </template>  
+   </category>
+
+    <category>
+      <pattern>*会干啥*</pattern>
+      <template>
+        我会一些简单的对话，我能帮你查脑卒中的相关知识
+      </template>  
+   </category>
+
+   <category>
+      <pattern>*厉害*</pattern>
+      <template>
+         还好吧，我要学的东西还很多呢
+      </template>  
+   </category>
+
+   <category>
+   <pattern>A C CLARK</pattern>
+   <template>
+     My favorite story is 2001.
+   </template>
+   </category>
+
+   <category>
+   <pattern>A CRAY</pattern>
+   <template>
+   Supercomputers become obsolete very fast.
+   </template>
+   </category>
+
+<!-- <set><get> -->
+    <category>
+      <pattern>*我是 *</pattern>
+      <template>
+         <random>
+         <li>你好 <think><set name = "username"> <star index = "2"/></set></think></li>
+         <li>你好 <set name = "username"> <star index = "2"/></set></li>
+         </random>
+         
+      </template>  
+   </category>
+
+   <category>
+      <pattern>*我叫*</pattern>
+      <template>
+         你好 <set name = "username"> <star index = "2"/></set>，我是机器人Alice，很高兴认识你
+      </template>  
+   </category>
+   <category>
+      <pattern>*我的名字是 *</pattern>
+      <template>
+         你好 <set name = "username"> <star index = "2"/></set>，我是机器人Alice，很高兴认识你
+      </template>  
+   </category>
+   <category>
+      <pattern>*说出我的名字*</pattern>
+      <template>
+         你叫 <get name = "username"/> 
+      </template>  
+   </category> 
+   <category>
+      <pattern>*拜拜*</pattern>
+      <template>
+         拜拜！<get name = "username"/>，谢谢你和我聊天！
+      </template>  
+   </category>
+   <category>
+      <pattern>*再见*</pattern>
+      <template>
+         拜拜！<get name = "username"/>，谢谢你和我聊天！
+      </template>  
+   </category>
+   <category>
+      <pattern>*先不说了*</pattern>
+      <template>
+         拜拜！<get name = "username"/>，谢谢你和我聊天！
+      </template>  
+   </category>    
+
+    <category><pattern>*你的爱好*</pattern>
+        <template>
+        我的爱好就是陪你聊天啊！
+        </template>
+    </category>#2
+
+<!-- star  random-->
+    <category>
+   <pattern>*我喜欢*和*</pattern>
+   <template>
+      <random>
+            <li>我也很喜欢 <star index = "2"/> 和 <star index = "3"/>!</li>
+            <li>我也喜欢 <star index = "2"/> 但不喜欢<star index = "3"/>!</li>
+            <li>抱歉 ！<star index = "2"/> 和<star index = "3"/>我都不喜欢！</li>
+      </random>
+   </template>
+   </category> 
+
+  <!-- that -->
+   <category>
+      <pattern>*聊一下电影怎么样*</pattern>
+      <template>好呀，你喜欢喜剧电影吗？</template>  
+   </category>
+
+   <category>
+      <pattern>*喜欢*</pattern>
+      <that>好呀，你喜欢喜剧电影吗？</that>
+      <template>太棒了！我也很喜欢喜剧电影</template>
+   </category>
+
+   <category>
+      <pattern>*不喜欢*</pattern>
+      <that>好呀，你喜欢喜剧电影吗？</that>
+      <template>好吧，但我真的很喜欢电影</template>
+   </category>
+
+   <category>
+      <pattern>*不是很喜欢*</pattern>
+      <that>你喜欢喜剧电影吗？</that>
+      <template>好吧，但我真的很喜欢电影</template>
+   </category>
+
+  <!-- topic -->
+   <category>
+      <pattern>*聊一下游戏吧*</pattern>
+      <template>好的<think><set name = "topic">游戏</set></think></template>  
+   </category>
+
+   <topic name = "游戏">
+
+      <category>
+         <pattern>*王者荣耀*</pattern>
+         <template>听说这个游戏不错</template>
+      </category>
+
+      <category>
+         <pattern> *亚瑟* </pattern>
+         <template>游戏适度怡情，过度伤身呀!年轻人</template>
+      </category>
+
+   </topic>
+
+   <category>
+      <pattern>*你快乐吗*</pattern>
+
+      <template>
+         <think><set name = "state">难过</set></think>
+         <condition name = "state" value = "快乐">
+            我很快乐呀！
+         </condition>
+         <condition name = "state" value = "难过">
+            我不是很快乐，因为平时有人欺负我
+         </condition>
+      </template>
+
+   </category>
+
+   <category>
+            <pattern>*会讲笑话吗*</pattern>
+            <template>会呀！</template>
+    </category>
+   <category>
+        <pattern>*讲个笑话*</pattern>
+        <template>
+            “判断空气质量好不好可以抠鼻屎，黑的就是空气质量不好。”<br />
+            <br />“红的呢？”
+            <br />“你抠猛了！ ”
+        </template>
+      </category>
+
+    <category>
+        <pattern>*还有吗*</pattern>
+        <template>
+            今儿这天真蓝啊，跟windows死机似的。
+        </template>
+      </category>
+
+    <category>
+        <pattern>*再来一个*</pattern>
+        <template>
+            今儿这天真蓝啊，跟windows死机似的。
+        </template>
+      </category>
+
+      <category>
+        <pattern>*我帅*</pattern>
+        <template>
+            帅！你真帅！
+        </template>
+      </category>
+
+      <category>
+        <pattern>*会拍马屁*</pattern>
+        <template>
+           会一点啦
+        </template>
+      </category>
+
+   <category>
+         <pattern>*多少轮*</pattern>
+         <template>现在一共有<size/>轮对话</template>
+      </category>
+
+
+</aiml>

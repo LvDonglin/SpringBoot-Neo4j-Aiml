@@ -1,0 +1,4 @@
+
+
+<!-- Load standard AIML set -->
+<file><set topic="hello">E:\SpringCloud_Projects\KnowledgeGraph\src\main\java\com\example\java\brain\files\hello.aiml</file>
